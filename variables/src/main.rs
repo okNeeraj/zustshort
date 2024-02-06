@@ -9,8 +9,10 @@ fn main() {
     println!("Value of X is - {}", x);
 
     let mut y: i32 = 10;
+    println!("Initial value of y is - {}", y);
+
     y = 20;
-    println!("Value of Y is - {}", y);
+    println!("Value of Y after override is - {}", y);
 
     /**
      * Variable Shadowing
@@ -19,8 +21,15 @@ fn main() {
      * This is useful for reusing variable names without having to introduce new names.
      */
     let z = 5;
-    let z = z + 10;
-    println!("Value of Z is - {}", z);
+
+    let z = z + 1;
+
+    {
+        let z = z * 2;
+        println!("The value of z in the inner scope is: {z}");
+    }
+
+    println!("The value of z is: {z}");
 
     /**
      * Constants
